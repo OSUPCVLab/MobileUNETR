@@ -1,0 +1,15 @@
+.vscode
+/data
+**/wandb
+**/__pycache__
+**.npy
+**.pth
+**.svg
+**.jpg
+**.csv
+**.bin
+**/data
+**.tex
+**/model_checkpoints
+**.png
+**.pkl

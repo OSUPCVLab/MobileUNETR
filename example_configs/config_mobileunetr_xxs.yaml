@@ -1,0 +1,171 @@
+##############################################################
+# Commonly Used Variables
+##############################################################
+variables:
+  batch_size: &batch_size 8
+  num_channels: &num_channels 3
+  num_classes: &num_classes 1
+  num_epochs: &num_epochs 400 
+
+##############################################################
+# Wandb Model Tracking
+##############################################################
+project: mobileunetr
+wandb_parameters:
+  group: isic_2016
+  name: exp_2_dice_b8_a2
+  mode: "online"
+  resume: False
+  tags: ["tr16ts16", "dice", "xxs", "adam"]
+
+##############################################################
+# Model Hyper-Parameters
+##############################################################
+model_name: mobileunetr_xxs
+model_parameters:
+  encoder: None
+  bottle_neck:
+    dims: [96]
+    depths: [3]
+    expansion: 4
+    kernel_size: 3
+    patch_size: [2,2]
+    channels: [80, 96, 96]
+  decoder:
+    dims: [64, 80, 96]
+    channels: [16, 16, 24, 24, 48, 48, 64, 64, 80, 80, 96, 96, 320]
+    num_classes: 1
+  image_size: 512
+
+##############################################################
+# Loss Function
+##############################################################
+loss_fn:
+  loss_type: "dice"
+  loss_args: None
+
+##############################################################
+# Metrics
+##############################################################
+metrics:
+  type: "binary"
+  mean_iou:
+    enabled: True
+    mean_iou_args:
+      include_background: True
+      reduction: "mean"
+      get_not_nans: False
+      ignore_empty: True
+  dice:
+    enabled: False
+    dice_args:
+      include_background: True
+      reduction: "mean"
+      get_not_nans: False
+      ignore_empty: True
+      num_classes: *num_classes
+
+##############################################################
+# Optimizers
+##############################################################
+optimizer:
+  optimizer_type: "adamw"
+  optimizer_args:
+    lr: 0.00006
+    weight_decay: 0.01
+
+##############################################################
+# Learning Rate Schedulers
+##############################################################
+warmup_scheduler:
+  enabled: True # should be always true
+  warmup_epochs: 30
+
+# train scheduler
+train_scheduler:
+  scheduler_type: 'cosine_annealing_wr'
+  scheduler_args:
+    t_0_epochs: 600
+    t_mult: 1
+    min_lr: 0.000006
+
+##############################################################
+# EMA (Exponential Moving Average)
+##############################################################
+ema:
+  enabled: False
+  ema_decay: 0.999
+  print_ema_every: 20
+
+##############################################################
+# Gradient Clipping
+##############################################################
+clip_gradients:
+  enabled: False
+  clip_gradients_value: 0.1
+
+##############################################################
+# Training Hyperparameters
+##############################################################
+training_parameters:
+  seed: 42
+  num_epochs: 1000
+  cutoff_epoch: 600
+  load_optimizer: False
+  print_every: 1500
+  calculate_metrics: True
+  grad_accumulate_steps: 1 # default: 1
+  checkpoint_save_dir: "model_checkpoints/best_iou_checkpoint2"
+  load_checkpoint: # not implemented yet
+    load_full_checkpoint: False
+    load_model_only: False
+    load_checkpoint_path: None
+
+##############################################################
+# Dataset and Dataloader Args
+##############################################################
+dataset_parameters:
+  dataset_type: "isic_albumentation_v2"
+  train_dataset_args:
+    data_path: "../../../data/train_2016.csv"
+    train: True
+    image_size: [512, 512]
+  val_dataset_args:
+    data_path: "../../../data/test_2016.csv"
+    train: False
+    image_size: [512, 512]
+  test_dataset_args:
+    data_path: "../../../data/test_2016.csv"
+    train: False
+    image_size: [512, 512]
+  train_dataloader_args:
+    batch_size: *batch_size
+    shuffle: True
+    num_workers: 4
+    drop_last: True
+    pin_memory: True
+  val_dataloader_args:
+    batch_size: *batch_size
+    shuffle: False
+    num_workers: 4
+    drop_last: False
+    pin_memory: True
+  test_dataloader_args:
+    batch_size: 1
+    shuffle: False
+    num_workers: 4
+    drop_last: False
+    pin_memory: True
+
+##############################################################
+# Data Augmentation Args
+##############################################################
+train_augmentation_args:
+  mean: [0.485, 0.456, 0.406] 
+  std: [0.229, 0.224, 0.225] 
+  image_size: [512, 512] # [H, W]
+
+test_augmentation_args:
+  mean: [0.485, 0.456, 0.406] 
+  std: [0.229, 0.224, 0.225] 
+  image_size: [512, 512] # [H, W]
