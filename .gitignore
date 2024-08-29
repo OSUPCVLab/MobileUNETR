@@ -1,5 +1,4 @@
 .vscode
-/data
 **/wandb
 **/__pycache__
 **.npy
@@ -11,5 +10,5 @@
 **/data
 **.tex
 **/model_checkpoints
-**.png
 **.pkl
+**.png
