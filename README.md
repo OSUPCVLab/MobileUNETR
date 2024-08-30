@@ -1,6 +1,5 @@
 # MobileUNETR
-## A Lightweight End-To-End Hybrid Vision Transformer For Efficient Medical Image Segmentation
-### Accepted: European Conference on Computer Vision 2024 -- BioImage Computing 
+## A Lightweight End-To-End Hybrid Vision Transformer For Efficient Medical Image Segmentation: European Conference on Computer Vision 2024 -- BioImage Computing
 
 ## Architecture
 <p align="center">
