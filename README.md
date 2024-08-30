@@ -1,6 +1,23 @@
 # MobileUNETR
 ## A Lightweight End-To-End Hybrid Vision Transformer For Efficient Medical Image Segmentation
 
+## Architecture Overview
+<p align="center">
+  <div style="position: relative; display: inline-block;">
+    <img src="./resources/muvit_architecture.png" alt="Wide Image" width="600" style="display: block;">
+  </div>
+</p>
+
+## Parameter Distribution and Computational Complexity
+<p align="center">
+  <div style="position: relative; display: inline-block;">
+    <img src="./resources/params.png" alt="Wide Image" width="600" style="display: block;">
+  </div>
+</p>
+
+## :rocket: News
+* Repository Construction in Progress ... 
+
 * Overview:
     * Segmentation approaches broadly fall into 2 categories. 
         1. End to End CNN Based Segmentation Methods
@@ -10,23 +27,6 @@
       1.  MobileUNETR comprises of a lightweight hybrid CNN-Transformer encoder to help balance local and global contextual feature extraction in an efficient manner.
       2.  A novel hybrid decoder that simultaneously utilizes low-level and global features at different resolutions within the decoding stage for accurate mask generation.
       3. surpassing large and complex architectures, MobileUNETR achieves superior performance with 3 million parameters and a computational complexity of 1.3 GFLOPs.
-
-## :rocket: News
-* Repository Construction in Progress ... 
-
-### Architecture Overview
-<p align="center">
-  <div style="position: relative; display: inline-block;">
-    <img src="./resources/muvit_architecture.png" alt="Wide Image" width="600" style="display: block;">
-  </div>
-</p>
-
-### Parameter Distribution and Computational Complexity
-<p align="center">
-  <div style="position: relative; display: inline-block;">
-    <img src="./resources/params.png" alt="Wide Image" width="600" style="display: block;">
-  </div>
-</p>
 
 ## Stand Alone Model
 To help improve ease of use of the MobileUNETR architecture, the model is constructed as a single stand alone file. To use the model outside of the provided code base simply grab the mobileunetr.py file from architectures folder and insert it into your own project. 
@@ -44,7 +44,6 @@ build_mobileunetr_xs(config=None, num_classes: int = 1, image_size: int = 512)
 build_mobileunetr_xxs(config=None, num_classes: int = 1, image_size: int = 512)
 
 ```
-
 
 ## Data and Data Processing
 * ISIC Data -- https://challenge.isic-archive.com/data/
@@ -67,38 +66,35 @@ You might want to change the hyperparameters (batch size, learning rate, weight 
 As the experiment is running, the logs (train loss, vlaidation loss and dice score) will be written to the terminal. You can log your experiment on [wandb](https://wandb.ai/site) 
 (you need to setup an account there) if you set `mode: "online"` in the `wandb_parameters` section of the `config.yaml`. The default value is `mode: "offline"`. If you want to log the result to your wandb account, put your wandb info into the `wandb_parameters` section of the `config.yaml` and your entire experiment will be logged under your wandb entity (e.g. `pcvlab`) page.
 
-
-
-
-### ISIC 2016 Performance
+## ISIC 2016 Performance
 <p align="center">
   <div style="position: relative; display: inline-block;">
     <img src="./resources/isic_2016.png" alt="Wide Image" width="600" style="display: block;">
   </div>
 </p>
 
-### ISIC 2017 Performance
+## ISIC 2017 Performance
 <p align="center">
   <div style="position: relative; display: inline-block;">
     <img src="./resources/isic_2017.png" alt="Wide Image" width="600" style="display: block;">
   </div>
 </p>
 
-### ISIC 2018 Performance
+## ISIC 2018 Performance
 <p align="center">
   <div style="position: relative; display: inline-block;">
     <img src="./resources/isic_2018.png" alt="Wide Image" width="600" style="display: block;">
   </div>
 </p>
 
-### ISIC PH2 Performance
+## ISIC PH2 Performance
 <p align="center">
   <div style="position: relative; display: inline-block;">
     <img src="./resources/ph2.png" alt="Wide Image" width="600" style="display: block;">
   </div>
 </p>
 
-### Advanced Architectures and Training Methods
+## Advanced Architectures and Training Methods
 <p align="center">
   <div style="position: relative; display: inline-block;">
     <img src="./resources/adv_arch.png" alt="Wide Image" width="600" style="display: block;">
