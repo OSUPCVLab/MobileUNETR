@@ -1,6 +1,6 @@
 # MobileUNETR Architecture
 # Paper: MobileUNETR: A Lightweight End-To-End Hybrid Vision Transformer For Efficient Medical Image Segmentation
-# Author: Perera et. al.
+# Author: Shehan Perera -- The Ohio State University
 # Published in: European Conference on Computer Vision (ECCV) - Bio Image Computing
 
 import math
