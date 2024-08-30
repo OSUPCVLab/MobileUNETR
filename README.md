@@ -1,7 +1,8 @@
 # MobileUNETR
 ## A Lightweight End-To-End Hybrid Vision Transformer For Efficient Medical Image Segmentation
+### Accepted: European Conference on Computer Vision 2024 -- BioImage Computing 
 
-## Architecture Overview
+## Architecture
 <p align="center">
   <div style="position: relative; display: inline-block;">
     <img src="./resources/muvit_architecture.png" alt="Wide Image" width="600" style="display: block;">
@@ -18,7 +19,7 @@
 ## :rocket: News
 * Repository Construction in Progress ... 
 
-* Overview:
+## Overview:
     * Segmentation approaches broadly fall into 2 categories. 
         1. End to End CNN Based Segmentation Methods
         2. Transformer Based Encoder with a CNN Based Decoder. 
@@ -28,20 +29,26 @@
       2.  A novel hybrid decoder that simultaneously utilizes low-level and global features at different resolutions within the decoding stage for accurate mask generation.
       3. surpassing large and complex architectures, MobileUNETR achieves superior performance with 3 million parameters and a computational complexity of 1.3 GFLOPs.
 
-## Stand Alone Model
-To help improve ease of use of the MobileUNETR architecture, the model is constructed as a single stand alone file. To use the model outside of the provided code base simply grab the mobileunetr.py file from architectures folder and insert it into your own project. 
+## Stand Alone Model [Please Read]
+To help improve ease of use of the MobileUNETR architecture, the model is constructed as a single stand alone file. If you want to use the model outside of the provided code base simply grab the mobileunetr.py file from architectures folder and insert it into your own project. 
 
 * Example:
 ```
 # import from mobileunetr.py file
 from mobileunetr import build_mobileunetr_s, build_mobileunetr_xs, build_mobileunetr_xxs
+import torch
 
 # create model
 mobileunetr_s = build_mobileunetr_s(config=None, num_classes: int = 1, image_size: int = 512)
 
-build_mobileunetr_xs(config=None, num_classes: int = 1, image_size: int = 512)
+mobileunetr_xs = build_mobileunetr_xs(config=None, num_classes: int = 1, image_size: int = 512)
 
-build_mobileunetr_xxs(config=None, num_classes: int = 1, image_size: int = 512)
+mobileunetr_xxs =build_mobileunetr_xxs(config=None, num_classes: int = 1, image_size: int = 512)
+
+data = torch.randn((4, 3, 512, 512))
+out = mobile_unetr_xxs.forward(data)
+print(f"input tensor: {data.shape})
+print(f"output tensor: {out.shape})
 
 ```
 
