@@ -38,16 +38,16 @@ from mobileunetr import build_mobileunetr_s, build_mobileunetr_xs, build_mobileu
 import torch
 
 # create model
-mobileunetr_s = build_mobileunetr_s(config=None, num_classes: int = 1, image_size: int = 512)
+mobileunetr_s = build_mobileunetr_s(num_classes= 1, image_size=512)
 
-mobileunetr_xs = build_mobileunetr_xs(config=None, num_classes: int = 1, image_size: int = 512)
+mobileunetr_xs = build_mobileunetr_xs(num_classes=1, image_size=512)
 
-mobileunetr_xxs =build_mobileunetr_xxs(config=None, num_classes: int = 1, image_size: int = 512)
+mobileunetr_xxs = build_mobileunetr_xxs(num_classes=1, image_size= 512)
 
 data = torch.randn((4, 3, 512, 512))
-out = mobile_unetr_xxs.forward(data)
-print(f"input tensor: {data.shape})
-print(f"output tensor: {out.shape})
+out = mobileunetr_xxs.forward(data)
+print(f"input tensor: {data.shape}")
+print(f"output tensor: {out.shape}")
 
 ```
 
