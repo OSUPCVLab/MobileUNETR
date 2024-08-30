@@ -110,7 +110,7 @@ As the experiment is running, the logs (train loss, vlaidation loss and dice sco
 
 
 ## Citation
-If you liked our paper, please consider citing it
+If you liked our paper, please consider citing it [will update TBD sections soon]
 ```bibtex
 @inproceedings{perera2024mobileunetr,
   title={MobileUNETR: A Lightweight End-To-End Hybrid Vision Transformer For Efficient Medical Image Segmentation},
