@@ -44,6 +44,7 @@ mobileunetr_xs = build_mobileunetr_xs(num_classes=1, image_size=512)
 
 mobileunetr_xxs = build_mobileunetr_xxs(num_classes=1, image_size= 512)
 
+# forward pass
 data = torch.randn((4, 3, 512, 512))
 out = mobileunetr_xxs.forward(data)
 print(f"input tensor: {data.shape}")
