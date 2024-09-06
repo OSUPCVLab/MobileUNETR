@@ -19,6 +19,7 @@
 * Repository Construction in Progress ... 
 
 ## Overview:
+```
     * Segmentation approaches broadly fall into 2 categories. 
         1. End to End CNN Based Segmentation Methods
         2. Transformer Based Encoder with a CNN Based Decoder. 
@@ -30,7 +31,7 @@
 
 ## Stand Alone Model [Please Read]
 To help improve ease of use of the MobileUNETR architecture, the model is constructed as a single stand alone file. If you want to use the model outside of the provided code base simply grab the mobileunetr.py file from architectures folder and insert it into your own project. 
-
+```
 * Example:
 ```
 # import from mobileunetr.py file
