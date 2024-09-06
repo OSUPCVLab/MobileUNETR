@@ -124,6 +124,6 @@ If you liked our paper, please consider citing it [will update TBD sections soon
 @article{perera2024mobileunetr,
   title={MobileUNETR: A Lightweight End-To-End Hybrid Vision Transformer For Efficient Medical Image Segmentation},
   author={Perera, Shehan, Erzurumlu, Yunus, Gulati, Deepak and Yilmaz, Alper},
-  journal={arXiv preprint TBD},
+  journal={https://arxiv.org/abs/2409.03062},
   year={2024}
 }
