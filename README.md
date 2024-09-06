@@ -19,11 +19,11 @@
 * Repository Construction in Progress ... 
 
 ## Overview:
-```
     * Segmentation approaches broadly fall into 2 categories. 
         1. End to End CNN Based Segmentation Methods
         2. Transformer Based Encoder with a CNN Based Decoder. 
-    * Many Transformer based segmentation approaches rely primarily on CNN based decoders overlooking the benefits of the Transformer architecture within the decoder. We address the need for an efficient/lightweight segmentation architecture by introducing MobileUNETR, which aims to overcome the performance constraints associated with both CNNs and Transformers while minimizing model size, presenting a promising stride towards efficient image segmentation. 
+    * Many Transformer based segmentation approaches rely primarily on CNN based decoders overlooking the benefits of the Transformer architecture within the decoder. 
+    * We address the need for an efficient/lightweight segmentation architecture by introducing MobileUNETR, which aims to overcome the performance constraints associated with both CNNs and Transformers while minimizing model size, presenting a promising stride towards efficient image segmentation. 
     * MobileUNETR has 3 main features. 
       1.  MobileUNETR comprises of a lightweight hybrid CNN-Transformer encoder to help balance local and global contextual feature extraction in an efficient manner.
       2.  A novel hybrid decoder that simultaneously utilizes low-level and global features at different resolutions within the decoding stage for accurate mask generation.
@@ -31,7 +31,7 @@
 
 ## Stand Alone Model [Please Read]
 To help improve ease of use of the MobileUNETR architecture, the model is constructed as a single stand alone file. If you want to use the model outside of the provided code base simply grab the mobileunetr.py file from architectures folder and insert it into your own project. 
-```
+
 * Example:
 ```
 # import from mobileunetr.py file
