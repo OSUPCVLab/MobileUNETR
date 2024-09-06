@@ -16,7 +16,9 @@
 </p>
 
 ## :rocket: News
-* Repository Construction in Progress ... 
+* Repository Construction Complete 06/09/2024
+* We will continue to update the GitHub repository with new experiments with a wide range of datasets, so be sure to check back regularly.
+* Checkout our other projects: https://github.com/OSUPCVLab/SegFormer3D
 
 ## Overview:
     * Segmentation approaches broadly fall into 2 categories. 
