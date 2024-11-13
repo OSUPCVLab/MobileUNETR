@@ -11,4 +11,4 @@
 **.tex
 **/model_checkpoints
 **.pkl
-**.png
+#**.png
