@@ -111,6 +111,63 @@ As the experiment is running, the logs (train loss, vlaidation loss and dice sco
   </div>
 </p>
 
+## Experiments: Extending to Complex Real World Scenes (Cityscapes, Potsdamn and Vaihigen)
+
+### Cityscapes Results
+
+<p align="center">
+  <div style="position: relative; display: inline-block;">
+    <img src="./resources/citiscapes1.png" alt="Wide Image" width="600" style="display: block;">
+  </div>
+</p>
+
+<p align="center">
+  <div style="position: relative; display: inline-block;">
+    <img src="./resources/cityscapes2.png" alt="Wide Image" width="600" style="display: block;">
+  </div>
+</p>
+
+<p align="center">
+  <div style="position: relative; display: inline-block;">
+    <img src="./resources/cityscapes3.png" alt="Wide Image" width="600" style="display: block;">
+  </div>
+</p>
+
+<p align="center">
+  <div style="position: relative; display: inline-block;">
+    <img src="./resources/cityscapes4.png" alt="Wide Image" width="600" style="display: block;">
+  </div>
+</p>
+
+<p align="center">
+  <div style="position: relative; display: inline-block;">
+    <img src="./resources/cityscapes_table.png" alt="Wide Image" width="300" style="display: block;">
+  </div>
+</p>
+
+### Potsdam and Vaihigen Results (GT [Left], Prediction Overlay [Right])
+
+<p align="center">
+  <div style="display: inline-block;">
+    <img src="./resources/postdam1_gt.png" alt="Wide Image" width="300" style="display: inline-block;">
+    <img src="./resources/postdam1_pred.png" alt="Another Image" width="300" style="display: inline-block; margin-left: 10px;">
+  </div>
+</p>
+
+<p align="center">
+  <div style="display: inline-block;">
+    <img src="./resources/postdam2_gt.png" alt="Wide Image" width="300" style="display: inline-block;">
+    <img src="./resources/postdam2_pred.png" alt="Another Image" width="300" style="display: inline-block; margin-left: 10px;">
+  </div>
+</p>
+
+### Potsdam Left Table and Vaihigen Right Table
+<p align="center">
+  <div style="display: inline-block;">
+    <img src="./resources/potsdam.png" alt="Wide Image" width="300" style="display: inline-block;">
+    <img src="./resources/vaihigen.png" alt="Another Image" width="300" style="display: inline-block; margin-left: 10px;">
+  </div>
+</p>
 
 ## Citation
 If you liked our paper, please consider citing it [will update TBD sections soon]
